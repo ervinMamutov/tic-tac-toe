@@ -1,50 +1,113 @@
+/* import google fonts*/
+
+/* ----------------------------------- */
+
+/* reset default settings */
+
+* {
+  padding: 0;
+  margin: 0;
+  bottom: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  min-width: 20rem;
+  line-height: 1;
+}
+a {
+  columns: inherit;
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+button {
+  line-height: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  color: inherit;
+  background-color: transparent;
 }
 
-.calculator-container {
-    width: 300px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+/* ----------------------------------- */
+
+/*  body */
+body {
+  font-family: serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
 }
 
-.input-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+/* ----------------------------------- */
+
+/* adaptive */
+[class*='__container'] {
+  max-width: 79.375rem;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  margin: 0 auto;
 }
 
-.input-number {
-    width: 45%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
+/* ----------------------------------- */
+
+/* game board*/
+.main__container {
+  display: flex;
+  justify-content: center;
 }
 
-.sum-button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    outline: none;
+.root {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 60px;
+  row-gap: 60px;
+  justify-items: center;
+  max-width: 56.25rem;
+  max-height: 56.25rem;
 }
 
-.sum-button:hover {
-    background-color: #45a049;
+.cell-container {
+  display: flex;
+  width: 12.5rem;
+  height: 12.5rem;
+  border: 0.3125rem solid #00a8a8;
+  border-radius: 1.65rem;
+  cursor: pointer;
+  font-size: 8rem;
+  color: #ff5c00;
+  justify-content: center;
+  align-items: center;
 }
 
-.output {
-    margin-top: 15px;
-    font-size: 18px;
-    font-weight: bold;
+.cell-container:hover {
+  border: 0.3125rem solid #0094ff;
+}
+
+.value-container {
+  justify-content: center;
 }
