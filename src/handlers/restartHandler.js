@@ -11,6 +11,7 @@ const restartHandler = (e) => {
     element.innerText = '';
   });
   document.querySelector('.winner-container').remove();
+  dom.next.querySelector('.message-next').remove();
 };
 
 export default restartHandler;
