@@ -1,32 +1,62 @@
+import winnerComponent from '../components/winnerComponent.js';
 import data from '../data.js';
-import checkArray from '../utils/checkArray.js';
 import checkWinner from '../utils/checkWinner.js';
+import dom from '../dom.js';
+import nextMessage from '../components/nextMessage.js';
 
 const clickCellHandler = (e) => {
+  let isGameActive = data.isGameActive;
   let isSecond = data.status;
   let count = data.count;
+
+  if (!isGameActive) {
+    return;
+  }
+
   const gameValueContainer = e.target;
-
   const gameValueText = gameValueContainer.querySelector('.value-text');
+  const error = document.querySelector('.error');
 
-  isSecond ? (gameValueText.innerText = 'O') : (gameValueText.innerText = 'X');
+  if (!gameValueText) {
+    error.style.display = 'block';
+    error.innerText = 'This cell is not empty';
+    return;
+  } else {
+    error.style.display = 'none';
+    isSecond
+      ? (gameValueText.innerText = 'O')
+      : (gameValueText.innerText = 'X');
+  }
 
   data.status = !isSecond;
   data.count = count + 1;
 
-  const objValue = {
+  const board = {
     count: data.count,
     value: gameValueText.innerText,
     idValue: gameValueContainer.id,
   };
 
-  console.log(objValue);
-  // checkArray(objValue);
+  data.array.push(board);
 
-  if (count < 4) {
+  const massage = dom.message;
+  const winner = checkWinner();
+  if (winner) {
+    dom.hidden.style.display = 'block';
+    dom.message.style.backgroundImage = `url(${data.win.url})`;
+    massage.append(winnerComponent(data.win, winner));
+    data.isGameActive = false;
+    data.status = !isSecond;
     return;
+  } else if (count < 8) {
+    isSecond
+      ? dom.next.append(nextMessage('X'))
+      : dom.next.append(nextMessage('O'));
   } else {
-    checkWinner(objValue);
+    dom.hidden.style.display = 'block';
+    dom.message.style.backgroundImage = `url(${data.draw.url})`;
+    massage.append(winnerComponent(data.draw));
+    data.array = [];
   }
 };
 
