@@ -41,17 +41,28 @@ const clickCellHandler = (e) => {
 
   const massage = dom.message;
   const winner = checkWinner();
+  const nextContainer = dom.next;
+  const messageNext = dom.next.querySelector('.message-next');
+
   if (winner) {
     dom.hidden.style.display = 'block';
     dom.message.style.backgroundImage = `url(${data.win.url})`;
     massage.append(winnerComponent(data.win, winner));
     data.isGameActive = false;
     data.status = !isSecond;
+
     return;
   } else if (count < 8) {
-    isSecond
-      ? dom.next.append(nextMessage('X'))
-      : dom.next.append(nextMessage('O'));
+    if (!messageNext) {
+      isSecond
+        ? nextContainer.append(nextMessage('player X is next'))
+        : nextContainer.append(nextMessage('player O is next'));
+    } else {
+      messageNext.remove();
+      isSecond
+        ? nextContainer.append(nextMessage('player X is next'))
+        : nextContainer.append(nextMessage('player O is next'));
+    }
   } else {
     dom.hidden.style.display = 'block';
     dom.message.style.backgroundImage = `url(${data.draw.url})`;
