@@ -68,9 +68,20 @@ const clickCellHandler = (e) => {
   if (winner) {
     dom.hidden.style.display = 'block';
     dom.message.style.backgroundImage = `url(${data.win.url})`;
-    massage.append(winnerComponent(data.win, winner));
+
+    if (winner === data.playerOne) {
+      massage.append(winnerComponent(data.win, 'Player One'));
+      data.winPlayerOne += 1;
+      dom.scoreOne.innerText = data.winPlayerOne;
+    } else {
+      massage.append(winnerComponent(data.win, 'Player Two'));
+      data.winPlayerTwo += 1;
+      dom.scoreTwo.innerText = data.winPlayerTwo;
+    }
+
     data.isGameActive = false;
     data.isPlayerX = !isPlayerX;
+
     return;
   } else if (count < 8) {
     if (!messageNext) {
@@ -87,6 +98,8 @@ const clickCellHandler = (e) => {
     dom.hidden.style.display = 'block';
     dom.message.style.backgroundImage = `url(${data.draw.url})`;
     massage.append(winnerComponent(data.draw));
+    data.draws += 1;
+    dom.drawsScore.innerText = data.draws;
     data.array = [];
   }
 };

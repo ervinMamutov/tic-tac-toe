@@ -5,9 +5,12 @@ const data = {
   isGameActive: true,
   playerOne: '',
   playerTwo: '',
+  winPlayerOne: 0,
+  winPlayerTwo: 0,
+  draws: 0,
   win: {
     url: '../assets/win.gif',
-    title: 'You Win',
+    title: 'Win',
   },
   draw: {
     url: '../assets/draw.gif',

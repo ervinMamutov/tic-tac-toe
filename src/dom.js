@@ -7,6 +7,9 @@ const dom = {
   selectPlayerOne: document.querySelector('.select-one'),
   selectPlayerTwo: document.querySelector('.select-two'),
   error: document.querySelector('.error'),
+  scoreOne: document.querySelector('.score-one'),
+  scoreTwo: document.querySelector('.score-two'),
+  drawsScore: document.querySelector('.draws-score'),
 };
 
 export default dom;
