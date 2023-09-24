@@ -1,4 +1,9 @@
-/* import google fonts*/
+/* import fonts*/
+@font-face {
+  font-family: 'FighterFish-3zG53';
+  src: url('../assets/font/fighter-fish-font/FighterFish-3zG53.otf')
+    format('opentype');
+}
 
 /* ----------------------------------- */
 
@@ -73,6 +78,33 @@ button {
 
 /* ----------------------------------- */
 
+/* header */
+.header {
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header-title {
+}
+.title-text {
+}
+.title {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 100px;
+}
+
+/* ----------------------------------- */
+
 /* game board*/
 .main-page {
   display: flex;
@@ -124,6 +156,11 @@ button {
 
 .value-container {
   justify-content: center;
+}
+.value-text {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 190px;
+  padding-top: 40px;
 }
 
 /* ----------------------------------- */
