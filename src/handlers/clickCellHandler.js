@@ -5,9 +5,6 @@ import dom from '../dom.js';
 import nextMessage from '../components/nextMessage.js';
 import selectOneEvent from '../events/selectOneEvent.js';
 
-import selectHandler from './selectHandler.js';
-import selectEvent from '../events/selectEvent.js';
-
 const clickCellHandler = (e) => {
   // let isGameActive = data.isGameActive;
   let isPlayerX = data.status;
