@@ -3,19 +3,39 @@ import data from '../data.js';
 import checkWinner from '../utils/checkWinner.js';
 import dom from '../dom.js';
 import nextMessage from '../components/nextMessage.js';
+import selectOneEvent from '../events/selectOneEvent.js';
+
+import selectHandler from './selectHandler.js';
+import selectEvent from '../events/selectEvent.js';
 
 const clickCellHandler = (e) => {
-  let isGameActive = data.isGameActive;
-  let isSecond = data.status;
+  // let isGameActive = data.isGameActive;
+  let isPlayerX = data.status;
   let count = data.count;
+  const error = dom.error;
 
-  if (!isGameActive) {
+  selectOneEvent();
+
+  if (!data.playerOne) {
+    error.style.display = 'block';
+    error.innerText = 'Select Player One preference';
+    return;
+  } else {
+    error.style.display = 'none';
+    // data.isGameActive = true;
+  }
+
+  console.log(data.playerOne);
+
+  if (!data.isGameActive) {
     return;
   }
 
   const gameValueContainer = e.target;
   const gameValueText = gameValueContainer.querySelector('.value-text');
-  const error = document.querySelector('.error');
+
+  error.style.display = 'none';
+  const isSelect = false;
 
   if (!gameValueText) {
     error.style.display = 'block';
@@ -23,12 +43,12 @@ const clickCellHandler = (e) => {
     return;
   } else {
     error.style.display = 'none';
-    isSecond
+    isPlayerX
       ? (gameValueText.innerText = 'O')
       : (gameValueText.innerText = 'X');
   }
 
-  data.status = !isSecond;
+  data.status = !isPlayerX;
   data.count = count + 1;
 
   const board = {
@@ -49,17 +69,17 @@ const clickCellHandler = (e) => {
     dom.message.style.backgroundImage = `url(${data.win.url})`;
     massage.append(winnerComponent(data.win, winner));
     data.isGameActive = false;
-    data.status = !isSecond;
+    data.status = !isPlayerX;
 
     return;
   } else if (count < 8) {
     if (!messageNext) {
-      isSecond
+      isPlayerX
         ? nextContainer.append(nextMessage('player X is next'))
         : nextContainer.append(nextMessage('player O is next'));
     } else {
       messageNext.remove();
-      isSecond
+      isPlayerX
         ? nextContainer.append(nextMessage('player X is next'))
         : nextContainer.append(nextMessage('player O is next'));
     }

@@ -4,7 +4,9 @@ const dom = {
   message: document.querySelector('.message'),
   hidden: document.getElementById('hidden'),
   next: document.querySelector('.next'),
-  selectElement: document.getElementsByTagName('player-select'),
+  selectPlayerOne: document.querySelector('.select-one'),
+  selectPlayerTwo: document.querySelector('.select-two'),
+  error: document.querySelector('.error'),
 };
 
 export default dom;

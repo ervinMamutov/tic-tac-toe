@@ -3,6 +3,7 @@ import dom from '../dom.js';
 
 const restartHandler = (e) => {
   data.array = [];
+
   data.count = 0;
   data.isGameActive = true;
   dom.hidden.style.display = 'none';

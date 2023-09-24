@@ -1,8 +1,10 @@
 const data = {
-  status: false,
+  isPlayerX: true,
   count: 0,
   array: [],
   isGameActive: true,
+  playerOne: '',
+  playerTwo: '',
   win: {
     url: '../assets/win.gif',
     title: 'You Win',

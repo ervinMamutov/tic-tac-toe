@@ -202,7 +202,8 @@ button {
   font-size: 50px;
 }
 
-#player-select {
+#player-select-one,
+#player-select-two {
   font-family: 'FighterFish-3zG53', sans-serif;
   font-size: 40px;
   text-align: center;
