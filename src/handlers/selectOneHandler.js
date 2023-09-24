@@ -7,15 +7,14 @@ const selectOneHandler = (e) => {
 
   if (valueOne === 'X') {
     dom.selectPlayerTwo.value = 'O';
+    data.playerOne = valueOne;
     data.playerTwo = 'O';
   } else {
     dom.selectPlayerTwo.value = 'X';
+    data.playerOne = valueOne;
+    console.log(valueOne);
     data.playerTwo = 'X';
   }
-
-  console.log(valueOne);
-
-  data.playerOne = valueOne;
 };
 
 export default selectOneHandler;

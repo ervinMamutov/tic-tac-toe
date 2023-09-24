@@ -6,23 +6,27 @@ import nextMessage from '../components/nextMessage.js';
 import selectOneEvent from '../events/selectOneEvent.js';
 
 const clickCellHandler = (e) => {
-  // let isGameActive = data.isGameActive;
-  let isPlayerX = data.status;
+  let isPlayerX = data.isPlayerX;
   let count = data.count;
   const error = dom.error;
+  const valueOne = dom.selectPlayerOne.value;
 
-  selectOneEvent();
-
-  if (!data.playerOne) {
+  if (valueOne) {
+    if (valueOne === 'X') {
+      data.playerOne = 'X';
+      data.playerTwo = 'O';
+      dom.selectPlayerTwo.value = 'O';
+    } else {
+      data.playerOne = 'O';
+      data.playerTwo = 'X';
+      dom.selectPlayerTwo.value = 'X';
+    }
+  } else {
     error.style.display = 'block';
     error.innerText = 'Select Player One preference';
+    selectOneEvent();
     return;
-  } else {
-    error.style.display = 'none';
-    // data.isGameActive = true;
   }
-
-  console.log(data.playerOne);
 
   if (!data.isGameActive) {
     return;
@@ -30,9 +34,9 @@ const clickCellHandler = (e) => {
 
   const gameValueContainer = e.target;
   const gameValueText = gameValueContainer.querySelector('.value-text');
+  const inputValue = gameValueText.innerText;
 
   error.style.display = 'none';
-  const isSelect = false;
 
   if (!gameValueText) {
     error.style.display = 'block';
@@ -41,11 +45,11 @@ const clickCellHandler = (e) => {
   } else {
     error.style.display = 'none';
     isPlayerX
-      ? (gameValueText.innerText = 'O')
-      : (gameValueText.innerText = 'X');
+      ? (gameValueText.innerText = data.playerOne)
+      : (gameValueText.innerText = data.playerTwo);
+    data.isPlayerX = !isPlayerX;
   }
 
-  data.status = !isPlayerX;
   data.count = count + 1;
 
   const board = {
@@ -66,19 +70,18 @@ const clickCellHandler = (e) => {
     dom.message.style.backgroundImage = `url(${data.win.url})`;
     massage.append(winnerComponent(data.win, winner));
     data.isGameActive = false;
-    data.status = !isPlayerX;
-
+    data.isPlayerX = !isPlayerX;
     return;
   } else if (count < 8) {
     if (!messageNext) {
-      isPlayerX
-        ? nextContainer.append(nextMessage('player X is next'))
-        : nextContainer.append(nextMessage('player O is next'));
+      !isPlayerX
+        ? nextContainer.append(nextMessage('Player One'))
+        : nextContainer.append(nextMessage('Player Two'));
     } else {
       messageNext.remove();
-      isPlayerX
-        ? nextContainer.append(nextMessage('player X is next'))
-        : nextContainer.append(nextMessage('player O is next'));
+      !isPlayerX
+        ? nextContainer.append(nextMessage('Player One'))
+        : nextContainer.append(nextMessage('Player Two'));
     }
   } else {
     dom.hidden.style.display = 'block';

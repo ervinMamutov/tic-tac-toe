@@ -8,7 +8,7 @@ const nextMessage = (value) => {
   const message = document.createElement('h3');
   message.classList.add('message-text');
 
-  message.innerText = value;
+  message.innerText = `${value} is next`;
 
   textMessage.append(message);
   container.append(textMessage);
