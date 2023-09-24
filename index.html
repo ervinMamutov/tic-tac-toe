@@ -1,30 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./styles/style.css" />
-        <title>Tic Tac Toe</title>
-    </head>
-    <body>
-        <div class="calculator-container">
-            <div class="input-container">
-                <input
-                    type="number"
-                    id="num-one"
-                    class="input-number"
-                    placeholder="Enter first number"
-                />
-                <input
-                    type="number"
-                    id="num-two"
-                    class="input-number"
-                    placeholder="Enter second number"
-                />
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./assets/tttIcon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <div class="header-title title">
+            <div class="title-text">
+              <h1 class="title">Tic Tac Toe</h1>
             </div>
-            <button type="button" id="sum" class="sum-button">Sum</button>
-            <div id="output" class="output"></div>
+          </div>
         </div>
-        <script type="module" src="./src/init.js"></script>
-    </body>
+      </header>
+
+      <main class="main">
+        <div class="main-page">
+          <div class="player-one-tab">
+            <div class="select-player-one">
+              <div class="player-one">
+                <div class="player-name">
+                  <h2 class="name">Player 1</h2>
+                </div>
+                <select name="player" id="player-select-one" class="select-one">
+                  <option value="">X vs O</option>
+                  <option value="X">X</option>
+                  <option value="O">O</option>
+                </select>
+              </div>
+            </div>
+            <div class="check-point">
+              <div class="player-check-one">
+                <div class="player-one">
+                  <div class="player-one-title">win</div>
+                  <div class="score-one"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="root"></div>
+
+          <div class="player-two-tab">
+            <div class="select-player-two">
+              <div class="select-player-two">
+                <div class="player-two">
+                  <div class="player-name">
+                    <h2 class="name">Player 2</h2>
+                  </div>
+                  <select
+                    name="player"
+                    id="player-select-two"
+                    class="select-two"
+                  >
+                    <option value="">X vs O</option>
+                    <option value="X">X</option>
+                    <option value="O">O</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="check-point">
+              <div class="player-check-two">
+                <div class="player-two">
+                  <h3 class="player-two-title">win</h3>
+                  <div class="score-two"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="error"></div>
+          <div class="message" id="hidden"></div>
+        </div>
+        <div class="main-service">
+          <div class="next"></div>
+          <div class="draws">
+            <div class="draws-score">
+              draws <span class="draws-score"></span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer class="footer">3</footer>
+    <script type="module" src="./src/init.js"></script>
+  </body>
 </html>

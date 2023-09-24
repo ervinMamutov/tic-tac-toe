@@ -8,21 +8,21 @@
     {
       "files": "*.js",
       "options": {
-        "tabWidth": 4,
+        "tabWidth": 2,
         "useTabs": false
       }
     },
     {
       "files": "*.css",
       "options": {
-        "tabWidth": 4,
+        "tabWidth": 2,
         "useTabs": false
       }
     },
     {
       "files": "*.html",
       "options": {
-        "tabWidth": 4,
+        "tabWidth": 2,
         "useTabs": false
       }
     }

@@ -1,50 +1,340 @@
+/* import fonts*/
+@font-face {
+  font-family: 'FighterFish-3zG53';
+  src: url('../assets/font/fighter-fish-font/FighterFish-3zG53.otf')
+    format('opentype');
+}
+
+/* ----------------------------------- */
+
+/* reset default settings */
+
+* {
+  padding: 0;
+  margin: 0;
+  bottom: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  min-width: 20rem;
+  font-family: serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1;
+}
+a {
+  columns: inherit;
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+button {
+  line-height: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  color: inherit;
+  background-color: transparent;
 }
 
-.calculator-container {
-    width: 300px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+/* ----------------------------------- */
+
+/*  body */
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
 }
 
-.input-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+/* ----------------------------------- */
+
+/* adaptive */
+[class*='__container'] {
+  max-width: 79.375rem;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  margin: 0 auto;
 }
 
-.input-number {
-    width: 45%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
+/* ----------------------------------- */
+
+/* header */
+.header {
+  width: 100%;
+  left: 0;
+  top: 0;
 }
 
-.sum-button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    outline: none;
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.sum-button:hover {
-    background-color: #45a049;
+.header-title {
+}
+.title-text {
+}
+.title {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 100px;
 }
 
-.output {
-    margin-top: 15px;
-    font-size: 18px;
-    font-weight: bold;
+/* ----------------------------------- */
+
+/* game board*/
+.main-page {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.root {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 60px;
+  row-gap: 60px;
+  justify-items: center;
+  max-width: 800px;
+  max-height: 800px;
+}
+
+.error {
+  position: absolute;
+  top: 50%;
+  color: white;
+  background-color: red;
+  height: 94px;
+  width: 828px;
+  border-radius: 20px;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 15px;
+  opacity: 0.8;
+  display: none;
+}
+
+.cell-container {
+  display: flex;
+  width: 12.5rem;
+  height: 12.5rem;
+  border: 0.3125rem solid #00a8a8;
+  border-radius: 1.65rem;
+  cursor: pointer;
+  font-size: 8rem;
+  color: #ff5c00;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell-container:hover {
+  border: 0.3125rem solid #0094ff;
+}
+
+.value-container {
+  justify-content: center;
+}
+.value-text {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 190px;
+  padding-top: 40px;
+}
+
+/* ----------------------------------- */
+
+/* select player*/
+
+.player-one-tab,
+.player-two-tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  row-gap: 40px;
+}
+.player-two-tab {
+}
+
+.select-player-one {
+}
+.select-player-two {
+}
+
+.player-one,
+.player-two {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+.player-two {
+}
+
+.player-name {
+}
+.name {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 50px;
+}
+
+#player-select-one,
+#player-select-two {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 40px;
+  text-align: center;
+}
+
+.check-point {
+}
+.player-check-one {
+}
+.player-check-two {
+}
+
+.player-one-title,
+.player-two-title {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.player-two-title {
+}
+
+.score {
+}
+
+/* ----------------------------------- */
+
+/* check point */
+
+/* ----------------------------------- */
+
+/* win or draw*/
+.message {
+  height: 300px;
+  position: fixed;
+  top: 15.375rem;
+  border: 3px solid red;
+  border-radius: 30px;
+  z-index: 5;
+  display: grid;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 600px;
+  display: none;
+  background-color: #00ffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.winner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-winner {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  font-size: 100px;
+  color: white;
+  padding-bottom: 39px;
+}
+
+/* ----------------------------------- */
+
+/* btn chose*/
+.btn-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.btn {
+  width: 200px;
+  height: 50px px;
+  border: 3px solid black;
+  border-radius: 20px;
+  font-size: 25px;
+  opacity: 0.8;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 11px 10px;
+}
+
+#btn-stop {
+  background-color: red;
+  margin-left: 20px;
+}
+
+#btn-next {
+  background-color: green;
+  margin-right: 20px;
+}
+
+#btn-stop:hover,
+#btn-next:hover {
+  background-color: grey;
+  color: black;
+}
+
+/* ----------------------------------- */
+
+/* message next */
+.main-service {
+  display: flex;
+  flex-direction: column;
+  margin-top: 41px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+  row-gap: 50px;
+}
+.message-text {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.draws {
+}
+.draws-score {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
 }
