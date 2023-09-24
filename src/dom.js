@@ -4,6 +4,7 @@ const dom = {
   message: document.querySelector('.message'),
   hidden: document.getElementById('hidden'),
   next: document.querySelector('.next'),
+  selectElement: document.getElementsByTagName('player-select'),
 };
 
 export default dom;

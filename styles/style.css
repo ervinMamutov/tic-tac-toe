@@ -118,8 +118,8 @@ button {
   column-gap: 60px;
   row-gap: 60px;
   justify-items: center;
-  max-width: 56.25rem;
-  max-height: 56.25rem;
+  max-width: 800px;
+  max-height: 800px;
 }
 
 .error {
@@ -162,6 +162,75 @@ button {
   font-size: 190px;
   padding-top: 40px;
 }
+
+/* ----------------------------------- */
+
+/* select player*/
+
+.player-one-tab,
+.player-two-tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  row-gap: 40px;
+}
+.player-two-tab {
+}
+
+.select-player-one {
+}
+.select-player-two {
+}
+
+.player-one,
+.player-two {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+.player-two {
+}
+
+.player-name {
+}
+.name {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 50px;
+}
+
+#player-select {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 40px;
+  text-align: center;
+}
+
+.check-point {
+}
+.player-check-one {
+}
+.player-check-two {
+}
+
+.player-one-title,
+.player-two-title {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.player-two-title {
+}
+
+.score {
+}
+
+/* ----------------------------------- */
+
+/* check point */
 
 /* ----------------------------------- */
 
@@ -246,12 +315,25 @@ button {
 /* message next */
 .main-service {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  margin-top: 41px;
+  margin-bottom: 30px;
   align-items: center;
-  flex-direction: row;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  justify-content: center;
+  row-gap: 50px;
 }
 .message-text {
-  font-size: 3.125rem;
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.draws {
+}
+.draws-score {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
 }
