@@ -10,6 +10,7 @@ const dom = {
   scoreOne: document.querySelector('.score-one'),
   scoreTwo: document.querySelector('.score-two'),
   drawsScore: document.querySelector('.draws-score'),
+  stopGame: document.getElementById('btn-stop'),
 };
 
 export default dom;
