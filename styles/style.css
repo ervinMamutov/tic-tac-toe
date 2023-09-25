@@ -338,3 +338,12 @@ button {
   text-align: center;
   text-transform: uppercase;
 }
+
+.score-one,
+.score-two,
+.draws-score {
+  font-family: 'FighterFish-3zG53', sans-serif;
+  font-size: 70px;
+  text-align: center;
+  text-transform: uppercase;
+}

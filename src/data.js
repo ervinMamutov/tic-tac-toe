@@ -9,11 +9,11 @@ const data = {
   winPlayerTwo: 0,
   draws: 0,
   win: {
-    url: '../assets/win.gif',
+    url: './assets/win.gif',
     title: 'Win',
   },
   draw: {
-    url: '../assets/draw.gif',
+    url: './assets/draw.gif',
     title: "It's a draw",
   },
 };
